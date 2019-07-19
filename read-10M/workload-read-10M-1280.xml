@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workload name="HUAWEI-read-10M-1280" description="" config="">
+    <workflow config="">
+        <workstage name="read" closuredelay="0" config="">
+            <work name="oio1" type="normal" workers="320" interval="5"
+                division="none" runtime="600" rampup="0" rampdown="0"
+                afr="200000" totalOps="0" totalBytes="0" config="">
+    		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.105:6007"/>
+                <operation type="read" ratio="100" division="none" config="containers=u(1,2);objects=u(1,100)" id="op1"/>
+            </work>
+            <work name="oio2" type="normal" workers="320" interval="5"
+                division="none" runtime="600" rampup="0" rampdown="0"
+                afr="200000" totalOps="0" totalBytes="0" config="">
+    		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.106:6007"/>
+                <operation type="read" ratio="100" division="none" config="containers=u(3,4);objects=u(1,100)" id="op1"/>
+            </work>
+            <work name="oio3" type="normal" workers="320" interval="5"
+                division="none" runtime="600" rampup="0" rampdown="0"
+                afr="200000" totalOps="0" totalBytes="0" config="">
+    		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.107:6007"/>
+                <operation type="read" ratio="100" division="none" config="containers=u(5,6);objects=u(1,100)" id="op1"/>
+            </work>
+            <work name="oio4" type="normal" workers="320" interval="5"
+                division="none" runtime="600" rampup="0" rampdown="0"
+                afr="200000" totalOps="0" totalBytes="0" config="">
+    		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.108:6007"/>
+                <operation type="read" ratio="100" division="none" config="containers=u(7,8);objects=u(1,100)" id="op1"/>
+            </work>
+        </workstage>
+    </workflow>
+</workload>
