@@ -5,29 +5,11 @@
             <work type="init" workers="1" config="containers=r(1,8)" />
         </workstage>
         <workstage name="write" closuredelay="0" config="">
-            <work name="oio1" type="normal" workers="10" interval="5"
+            <work name="oio1" type="normal" workers="40" interval="5"
                 division="none" runtime="0" rampup="0" rampdown="0"
                 afr="200000" totalOps="640" totalBytes="0" config="">
     		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.105:6007"/>
                 <operation type="write" ratio="100" division="none" config="containers=r(1,2);objects=r(1,320);sizes=c(10)MB" id="op1"/>
-            </work>
-            <work name="oio2" type="normal" workers="10" interval="5"
-                division="none" runtime="0" rampup="0" rampdown="0"
-                afr="200000" totalOps="640" totalBytes="0" config="">
-    		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.106:6007"/>
-                <operation type="write" ratio="100" division="none" config="containers=r(3,4);objects=r(1,320);sizes=c(10)MB" id="op1"/>
-            </work>
-            <work name="oio3" type="normal" workers="10" interval="5"
-                division="none" runtime="0" rampup="0" rampdown="0"
-                afr="200000" totalOps="640" totalBytes="0" config="">
-    		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.107:6007"/>
-                <operation type="write" ratio="100" division="none" config="containers=r(5,6);objects=r(1,320);sizes=c(10)MB" id="op1"/>
-            </work>
-            <work name="oio4" type="normal" workers="10" interval="5"
-                division="none" runtime="0" rampup="0" rampdown="0"
-                afr="200000" totalOps="640" totalBytes="0" config="">
-    		<storage type="s3" config="accesskey=b52bcac73f66430a963f476332b9736e;secretkey=8026531c3aca4c26b90db55bf6c817b1;service=us-east-1/service;endpoint=http://10.10.10.108:6007"/>
-                <operation type="write" ratio="100" division="none" config="containers=r(7,8);objects=r(1,320);sizes=c(10)MB" id="op1"/>
             </work>
         </workstage>
     </workflow>
